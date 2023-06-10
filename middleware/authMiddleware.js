@@ -4,7 +4,7 @@ const auth = (req, res, next) => {
   console.log(token);
   if (token) {
     try {
-      const decoded = jwt.verify(token.split(" ")[1], "socialMedia");
+      const decoded = jwt.verify(token.split(" ")[1], "emi");
       if (decoded) {
         req.body.authorID = decoded.authorID;
         req.body.author = decoded.author;

@@ -25,7 +25,7 @@ userRouter.post("/login", async (req, res) => {
         if (result) {
           const token = jwt.sign(
             { authorID: user._id, author: user.name },
-            "socialMedia"
+            "emi"
           );
           console.log(token);
           res.status(200).send({ msg: "login Successful", token: token });
