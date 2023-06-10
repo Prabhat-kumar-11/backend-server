@@ -1,7 +1,6 @@
 const express = require("express");
 const { connection } = require("./db");
 const { userRouter } = require("./routes/userRoutes");
-const { PostRouter } = require("./routes/postRoutes");
 const { auth } = require("./middleware/authMiddleware");
 require("dotenv").config()
 const cors = require("cors")
@@ -12,7 +11,7 @@ app.use(express.json());
 
 app.use("/users", userRouter);
 app.use(auth)
-app.use("/posts",PostRouter)
+
 
 app.listen(process.env.port, async () => {
   try {
